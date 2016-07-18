@@ -62,7 +62,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 update_cart_line
 
-=head2 batche
+=head2 batch
 
 =head2 add_member
 
@@ -256,7 +256,7 @@ has 'commands' => (
             removed_automation_subscribers => { path => 'automations/:workflow_id/removed-subscribers' },
 
             # batch
-            batche    => { path => 'batches/:batch_id' },
+            batch     => { path => 'batches/:batch_id' },
             batches   => { path => 'batches' },
             add_batch => {
                 method    => 'POST',
