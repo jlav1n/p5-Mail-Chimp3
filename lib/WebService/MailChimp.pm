@@ -2,7 +2,7 @@ package WebService::MailChimp;
 
 use Mouse;
 
-with 'Web::API';
+with 'Web::API' => { -version => 2.3 };
 
 our $VERSION = '0.1';
 
@@ -203,8 +203,7 @@ has 'commands' => (
             root => { path => '/' },
 
             # authorized apps
-            authorized_app     => { path => 'authorized-apps/:app_id' },
-            authorized_apps    => { path => 'authorized-apps' },
+            authorized_apps    => { path => 'authorized-apps/?app_id' },
             add_authorized_app => {
                 method    => 'POST',
                 path      => 'authorized-apps',
@@ -215,8 +214,7 @@ has 'commands' => (
             },
 
             # automations
-            automation       => { path => 'automations/:workflow_id' },
-            automations      => { path => 'automations' },
+            automations      => { path => 'automations/?workflow_id' },
             pause_automation => {
                 method => 'POST',
                 path   => 'automations/:workflow_id/actions/pause-all-emails',
@@ -227,8 +225,7 @@ has 'commands' => (
             },
 
             # automation emails
-            automation_email       => { path => 'automations/:workflow_id/emails/:workflow_email_id' },
-            automation_emails      => { path => 'automations/:workflow_id/emails' },
+            automation_emails      => { path => 'automations/:workflow_id/emails/?workflow_email_id' },
             pause_automation_email => {
                 method => 'POST',
                 path   => 'automations/:workflow_id/emails/:workflow_email_id/actions/pause',
@@ -242,11 +239,8 @@ has 'commands' => (
                 path      => 'automations/:workflow_id/emails/:workflow_email_id/queue',
                 mandatory => ['email_address'],
             },
-            automation_subscriber => {
-                path      => 'automations/:workflow_id/emails/:workflow_email_id/queue/:subscriber_hash',
-            },
             automation_subscribers => {
-                path      => 'automations/:workflow_id/emails/:workflow_email_id/queue',
+                path      => 'automations/:workflow_id/emails/:workflow_email_id/queue/?subscriber_hash',
             },
             remove_automation_subscriber => {
                 method    => 'POST',
@@ -256,8 +250,7 @@ has 'commands' => (
             removed_automation_subscribers => { path => 'automations/:workflow_id/removed-subscribers' },
 
             # batch
-            batche    => { path => 'batches/:batch_id' },
-            batches   => { path => 'batches' },
+            batches   => { path => 'batches/?batch_id' },
             add_batch => {
                 method    => 'POST',
                 path      => 'batches',
@@ -276,12 +269,10 @@ has 'commands' => (
 
             # conversations
             # TODO
-            conversation  => { path => 'conversations/:conversation_id' },
-            conversations => { path => 'conversations' },
+            conversations   => { path => 'conversations/?conversation_id' },
 
             # ecommerce stores
-            store     => { path => 'ecommerce/stores/:store_id' },
-            stores    => { path => 'ecommerce/stores' },
+            stores    => { path => 'ecommerce/stores/?store_id' },
             add_store => {
                 method    => 'POST',
                 path      => 'ecommerce/stores',
@@ -302,8 +293,7 @@ has 'commands' => (
             },
 
             # ecommerce carts
-            cart     => { path => 'ecommerce/stores/:store_id/carts/:cart_id' },
-            carts    => { path => 'ecommerce/stores/:store_id/carts' },
+            carts    => { path => 'ecommerce/stores/:store_id/carts/?cart_id' },
             add_cart => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/carts',
@@ -319,8 +309,7 @@ has 'commands' => (
             },
 
             # ecommerce cart lines
-            cart_line     => { path => 'ecommerce/stores/:store_id/carts/:cart_id/lines/:line_id' },
-            cart_lines    => { path => 'ecommerce/stores/:store_id/carts/:cart_id/lines' },
+            cart_lines    => { path => 'ecommerce/stores/:store_id/carts/:cart_id/lines/?line_id' },
             add_cart_line => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/carts/:cart_id/lines',
@@ -342,11 +331,10 @@ has 'commands' => (
             },
 
             # ecommerce customers
-            customer     => { path => 'ecommerce/stores/:store_id/customers/:customer_id' },
-            customers    => { path => 'ecommerce/stores/:store_id/customers' },
+            customers    => { path => 'ecommerce/stores/:store_id/customers/?customer_id' },
             add_customer => {
                 method    => 'POST',
-                path      => 'ecommerce/stores/:store_id/customers',
+                path      => 'ecommerce/stores/:store_id/customers/:customer_id',
                 mandatory => [qw/
                     id
                     email_address
@@ -372,8 +360,7 @@ has 'commands' => (
             },
 
             # ecommerce orders
-            order     => { path => 'ecommerce/stores/:store_id/orders/:order_id' },
-            orders    => { path => 'ecommerce/stores/:store_id/orders' },
+            orders    => { path => 'ecommerce/stores/:store_id/orders/?order_id' },
             add_order => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/orders',
@@ -395,8 +382,7 @@ has 'commands' => (
             },
 
             # ecommerce order lines
-            order_line     => { path => 'ecommerce/stores/:store_id/orders/:order_id/lines/:line_id' },
-            order_lines    => { path => 'ecommerce/stores/:store_id/orders/:order_id/lines' },
+            order_lines    => { path => 'ecommerce/stores/:store_id/orders/:order_id/lines/?line_id' },
             add_order_line => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/orders/:order_id/lines',
@@ -418,8 +404,7 @@ has 'commands' => (
             },
 
             # ecommerce products
-            product     => { path => 'ecommerce/stores/:store_id/products/:product_id' },
-            products    => { path => 'ecommerce/stores/:store_id/products' },
+            products    => { path => 'ecommerce/stores/:store_id/products/?product_id' },
             add_product => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/products',
@@ -435,8 +420,7 @@ has 'commands' => (
             },
 
             # ecommerce product variants
-            variant     => { path => 'ecommerce/stores/:store_id/products/:product_id/variants/:variant_id' },
-            variants    => { path => 'ecommerce/stores/:store_id/products/:product_id/variants' },
+            variants    => { path => 'ecommerce/stores/:store_id/products/:product_id/variants/?variant_id' },
             add_variant => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/products/:product_id/variants',
@@ -470,8 +454,7 @@ has 'commands' => (
 
             # lists
             # TODO
-            list     => { path => 'lists/:list_id' },
-            lists    => { path => 'lists' },
+            lists    => { path => 'lists/?list_id' },
             add_list => {
                 method    => 'POST',
                 path      => 'lists',
@@ -500,8 +483,7 @@ has 'commands' => (
             },
 
             # list members
-            member     => { path => 'lists/:list_id/members/:subscriber_hash' },
-            members    => { path => 'lists/:list_id/members' },
+            members    => { path => 'lists/:list_id/members/?subscriber_hash' },
             add_member => {
                 method    => 'POST',
                 path      => 'lists/:list_id/members',
@@ -528,8 +510,7 @@ has 'commands' => (
             },
 
             # merge fields
-            merge_field     => { path => 'lists/:list_id/merge-fields/:merge_id' },
-            merge_fields    => { path => 'lists/:list_id/merge-fields' },
+            merge_fields    => { path => 'lists/:list_id/merge-fields/?merge_id' },
             add_merge_field => {
                 method    => 'POST',
                 path      => 'lists/:list_id/merge-fields',
@@ -548,8 +529,7 @@ has 'commands' => (
             },
 
             # segments
-            segment     => { path => 'lists/:list_id/segments/:segment_id' },
-            segments    => { path => 'lists/:list_id/segments' },
+            segments    => { path => 'lists/:list_id/segments/?segment_id' },
             add_segment => {
                 method    => 'POST',
                 path      => 'lists/:list_id/segments',
