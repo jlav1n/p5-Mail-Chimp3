@@ -1,0 +1,207 @@
+=head1 SYNOPSIS
+
+Please refer to the API documentation at 
+L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
+
+    use WebService::MailChimp;
+
+    my $mailchimp = WebService::MailChimp->new(
+        api_key => $apikey,
+    );
+
+    my $response = $mailchimp->add_store(
+        store_id => '123',
+        cart_id  => '456',
+    );
+
+=head1 SUBROUTINES/METHODS
+
+=head2 add_segment
+
+=head2 add_variant
+
+=head2 customers
+
+=head2 customer
+
+=head2 cart
+
+=head2 update_segment
+
+=head2 update_member
+
+=head2 delete_variant
+
+=head2 update_customer
+
+=head2 add_product
+
+=head2 delete_member
+
+=head2 delete_list
+
+=head2 delete_store
+
+=head2 pause_automation
+
+=head2 add_cart_line
+
+=head2 list
+
+=head2 upsert_member
+
+=head2 upsert_variant
+
+=head2 update_cart_line
+
+=head2 batche
+
+=head2 add_member
+
+=head2 variants
+
+=head2 root
+
+=head2 update_variant
+
+=head2 order_lines
+
+=head2 conversation
+
+=head2 delete_order_line
+
+=head2 member
+
+=head2 delete_segment
+
+=head2 add_cart
+
+=head2 add_order_line
+
+=head2 delete_customer
+
+=head2 automation
+
+=head2 segments
+
+=head2 update_merge_field
+
+=head2 merge_field
+
+=head2 add_merge_field
+
+=head2 add_batch
+
+=head2 lists
+
+=head2 cart_line
+
+=head2 segment
+
+=head2 add_list
+
+=head2 variant
+
+=head2 automation_email
+
+=head2 delete_batch
+
+=head2 products
+
+=head2 remove_automation_subscriber
+
+=head2 update_order
+
+=head2 removed_automation_subscribers
+
+=head2 add_authorized_app
+
+=head2 authorized_app
+
+=head2 update_order_line
+
+=head2 product
+
+=head2 authorized_apps
+
+=head2 add_automation_subscriber
+
+=head2 update_cart
+
+=head2 batches
+
+=head2 update_store
+
+=head2 start_automation_email
+
+=head2 delete_product
+
+=head2 delete_cart_line
+
+=head2 conversations
+
+=head2 start_automation
+
+=head2 delete_cart
+
+=head2 cart_lines
+
+=head2 add_order
+
+=head2 automations
+
+=head2 merge_fields
+
+=head2 store
+
+=head2 delete_merge_field
+
+=head2 order_line
+
+=head2 orders
+
+=head2 automation_subscriber
+
+=head2 automation_subscribers
+
+=head2 stores
+
+=head2 delete_order
+
+=head2 order
+
+=head2 automation_emails
+
+=head2 pause_automation_email
+
+=head2 members
+
+=head2 update_list
+
+=head2 carts
+
+=head2 upsert_customer
+
+=head2 add_store
+
+=head2 add_customer
+
+=head1 INTERNALS
+
+=head2 BUILD
+
+basic configuration for the client API happens usually in the BUILD method when using Web::API
+
+=head1 BUGS
+
+Probably.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc WebService::MailChimp
+
+=head1 AUTHOR
+
+Josh Lavin

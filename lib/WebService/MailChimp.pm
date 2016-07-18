@@ -598,6 +598,10 @@ has 'datacenter' => (
     default => sub { 'us1 ' },
 );
 
+=head1 INTERNALS
+
+=cut
+
 sub commands {
     my ($self) = @_;
     return $self->commands;
