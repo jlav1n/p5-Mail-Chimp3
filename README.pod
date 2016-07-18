@@ -74,7 +74,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 automation_subscribers
 
-=head2 batche
+=head2 batch
 
 =head2 batches
 
