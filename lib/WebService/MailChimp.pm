@@ -62,7 +62,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 update_cart_line
 
-=head2 batche
+=head2 batch
 
 =head2 add_member
 
