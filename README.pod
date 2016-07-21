@@ -58,39 +58,21 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 add_variant
 
-=head2 authorized_app
-
 =head2 authorized_apps
-
-=head2 automation
-
-=head2 automation_email
 
 =head2 automation_emails
 
 =head2 automations
 
-=head2 automation_subscriber
-
 =head2 automation_subscribers
 
-=head2 batch
-
 =head2 batches
-
-=head2 cart
-
-=head2 cart_line
 
 =head2 cart_lines
 
 =head2 carts
 
-=head2 conversation
-
 =head2 conversations
-
-=head2 customer
 
 =head2 customers
 
@@ -120,21 +102,11 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 delete_variant
 
-=head2 list
-
 =head2 lists
-
-=head2 member
 
 =head2 members
 
-=head2 merge_field
-
 =head2 merge_fields
-
-=head2 order
-
-=head2 order_line
 
 =head2 order_lines
 
@@ -144,8 +116,6 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 pause_automation_email
 
-=head2 product
-
 =head2 products
 
 =head2 remove_automation_subscriber
@@ -154,15 +124,11 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 root
 
-=head2 segment
-
 =head2 segments
 
 =head2 start_automation
 
 =head2 start_automation_email
-
-=head2 store
 
 =head2 stores
 
@@ -193,8 +159,6 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 =head2 upsert_member
 
 =head2 upsert_variant
-
-=head2 variant
 
 =head2 variants
 
