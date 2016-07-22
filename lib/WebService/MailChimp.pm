@@ -4,9 +4,13 @@ use Mouse;
 
 with 'Web::API';
 
-our $VERSION = '0.1';
+# ABSTRACT: WebService::MailChimp - an interface to mailchimp.com's RESTful Web API v3 using WEB::API
+
+our $VERSION = '0.01';
 
 =head1 SYNOPSIS
+
+This is for the MailChimp API v3.0.
 
 Please refer to the API documentation at 
 L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
@@ -627,13 +631,23 @@ sub BUILD {
 
 =head1 BUGS
 
-Probably.
+Please report any bugs or feature requests on GitHub's issue tracker L<https://github.com/jdigory/p5-WebService-MailChimp/issues>.
 
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc WebService::MailChimp
+
+You can also look for information at:
+
+=over 4
+
+=item * GitHub repository
+
+L<https://github.com/jdigory/p5-WebService-MailChimp>
+
+=back
 
 =cut
 
