@@ -212,10 +212,7 @@ has 'commands' => (
             add_authorized_app => {
                 method    => 'POST',
                 path      => 'authorized-apps',
-                mandatory => [
-                    'client_id',
-                    'client_secret',
-                ],
+                mandatory => [ 'client_id', 'client_secret', ],
             },
 
             # automations
@@ -247,10 +244,10 @@ has 'commands' => (
                 mandatory => ['email_address'],
             },
             automation_subscriber => {
-                path      => 'automations/:workflow_id/emails/:workflow_email_id/queue/:subscriber_hash',
+                path => 'automations/:workflow_id/emails/:workflow_email_id/queue/:subscriber_hash',
             },
             automation_subscribers => {
-                path      => 'automations/:workflow_id/emails/:workflow_email_id/queue',
+                path => 'automations/:workflow_id/emails/:workflow_email_id/queue',
             },
             remove_automation_subscriber => {
                 method    => 'POST',
@@ -289,12 +286,7 @@ has 'commands' => (
             add_store => {
                 method    => 'POST',
                 path      => 'ecommerce/stores',
-                mandatory => [
-                    'id',
-                    'list_id',
-                    'name',
-                    'currency_code',
-                ],
+                mandatory => [ 'id', 'list_id', 'name', 'currency_code', ],
             },
             update_store => {
                 method => 'PATCH',
@@ -328,13 +320,15 @@ has 'commands' => (
             add_cart_line => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/carts/:cart_id/lines',
-                mandatory => [qw/
-                    id
-                    product_id
-                    product_variant_id
-                    quantity
-                    price
-                /],
+                mandatory => [
+                    qw/
+                        id
+                        product_id
+                        product_variant_id
+                        quantity
+                        price
+                        /
+                ],
             },
             update_cart_line => {
                 method => 'PATCH',
@@ -351,11 +345,13 @@ has 'commands' => (
             add_customer => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/customers',
-                mandatory => [qw/
-                    id
-                    email_address
-                    opt_in_status
-                /],
+                mandatory => [
+                    qw/
+                        id
+                        email_address
+                        opt_in_status
+                        /
+                ],
             },
             update_customer => {
                 method => 'PATCH',
@@ -364,11 +360,13 @@ has 'commands' => (
             upsert_customer => {
                 method    => 'PUT',
                 path      => 'ecommerce/stores/:store_id/customers/:customer_id',
-                mandatory => [qw/
-                    id
-                    email_address
-                    opt_in_status
-                /],
+                mandatory => [
+                    qw/
+                        id
+                        email_address
+                        opt_in_status
+                        /
+                ],
             },
             delete_customer => {
                 method => 'DELETE',
@@ -381,13 +379,15 @@ has 'commands' => (
             add_order => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/orders',
-                mandatory => [qw/
-                    id
-                    customer
-                    currency_code
-                    order_total
-                    lines
-                /],
+                mandatory => [
+                    qw/
+                        id
+                        customer
+                        currency_code
+                        order_total
+                        lines
+                        /
+                ],
             },
             update_order => {
                 method => 'PATCH',
@@ -404,13 +404,15 @@ has 'commands' => (
             add_order_line => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/orders/:order_id/lines',
-                mandatory => [qw/
-                    id
-                    product_id
-                    product_variant_id
-                    quantity
-                    price
-                /],
+                mandatory => [
+                    qw/
+                        id
+                        product_id
+                        product_variant_id
+                        quantity
+                        price
+                        /
+                ],
             },
             update_order_line => {
                 method => 'PATCH',
@@ -427,11 +429,7 @@ has 'commands' => (
             add_product => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/products',
-                mandatory => [
-                    'id',
-                    'title',
-                    'variants',
-                ],
+                mandatory => [ 'id', 'title', 'variants', ],
             },
             delete_product => {
                 method => 'DELETE',
@@ -444,10 +442,7 @@ has 'commands' => (
             add_variant => {
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/products/:product_id/variants',
-                mandatory => [
-                    'id',
-                    'title',
-                ],
+                mandatory => [ 'id', 'title', ],
             },
             update_variant => {
                 method => 'PATCH',
@@ -456,10 +451,7 @@ has 'commands' => (
             upsert_variant => {
                 method    => 'PUT',
                 path      => 'ecommerce/stores/:store_id/products/:product_id/variants/:variant_id',
-                mandatory => [
-                    'id',
-                    'title',
-                ],
+                mandatory => [ 'id', 'title', ],
             },
             delete_variant => {
                 method => 'DELETE',
@@ -479,24 +471,28 @@ has 'commands' => (
             add_list => {
                 method    => 'POST',
                 path      => 'lists',
-                mandatory => [qw/
-                    name
-                    contact
-                    permission_reminder
-                    campaign_defaults
-                    email_type_option
-                /],
+                mandatory => [
+                    qw/
+                        name
+                        contact
+                        permission_reminder
+                        campaign_defaults
+                        email_type_option
+                        /
+                ],
             },
             update_list => {
                 method    => 'PATCH',
                 path      => 'lists/:list_id',
-                mandatory => [qw/
-                    name
-                    contact
-                    permission_reminder
-                    campaign_defaults
-                    email_type_option
-                /],
+                mandatory => [
+                    qw/
+                        name
+                        contact
+                        permission_reminder
+                        campaign_defaults
+                        email_type_option
+                        /
+                ],
             },
             delete_list => {
                 method => 'DELETE',
@@ -509,10 +505,7 @@ has 'commands' => (
             add_member => {
                 method    => 'POST',
                 path      => 'lists/:list_id/members',
-                mandatory => [
-                    'status',
-                    'email_address',
-                ],
+                mandatory => [ 'status', 'email_address', ],
             },
             update_member => {
                 method => 'PATCH',
@@ -521,10 +514,12 @@ has 'commands' => (
             upsert_member => {
                 method    => 'PUT',
                 path      => 'lists/:list_id/members/:subscriber_hash',
-                mandatory => [qw/
-                    email_address
-                    status_if_new
-                /],
+                mandatory => [
+                    qw/
+                        email_address
+                        status_if_new
+                        /
+                ],
             },
             delete_member => {
                 method => 'DELETE',
@@ -537,10 +532,7 @@ has 'commands' => (
             add_merge_field => {
                 method    => 'POST',
                 path      => 'lists/:list_id/merge-fields',
-                mandatory => [
-                    'name',
-                    'type',
-                ],
+                mandatory => [ 'name', 'type', ],
             },
             update_merge_field => {
                 method => 'PATCH',
@@ -620,8 +612,8 @@ basic configuration for the client API happens usually in the BUILD method when 
 sub BUILD {
     my ($self) = @_;
 
-    $self->user_agent(__PACKAGE__ . ' ' . $VERSION);
-    $self->base_url('https://' . $self->datacenter . '.api.mailchimp.com/' . $self->api_version . '/');
+    $self->user_agent( __PACKAGE__ . ' ' . $VERSION );
+    $self->base_url( 'https://' . $self->datacenter . '.api.mailchimp.com/' . $self->api_version . '/' );
     $self->auth_type('basic');
     $self->user('anystring');
     $self->content_type('application/json');
