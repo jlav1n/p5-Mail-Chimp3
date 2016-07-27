@@ -1,4 +1,4 @@
 use Test::More;
 
-use_ok('WebService::MailChimp');
+use_ok('Mail::Chimp3');
 done_testing;
