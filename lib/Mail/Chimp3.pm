@@ -1,6 +1,9 @@
 package Mail::Chimp3;
 
-use Mouse;
+use Moo;
+use strictures 2;
+use namespace::autoclean;
+use Types::Standard qw/ Num Str /;
 
 with 'Web::API';
 
@@ -200,7 +203,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =cut
 
-has 'commands' => (
+has 'endpoints' => (
     is      => 'rw',
     default => sub {
         {
@@ -574,24 +577,23 @@ has 'commands' => (
 
 has 'api_version' => (
     is      => 'ro',
-    isa     => 'Num',
+    isa     => Num,
     default => sub { '3.0' },
 );
 
-has 'api_key' => (
-    is      => 'rw',
-    isa     => 'Str',
-    trigger => sub {
-        my ( $self, $val ) = @_;
-        my ($datacenter) = ( $val =~ /\-(\w+)$/ );
-        $self->datacenter($datacenter);
-    },
-);
-
 has 'datacenter' => (
-    is      => 'rw',
-    isa     => 'Str',
-    default => sub { 'us1 ' },
+    is      => 'lazy',
+    isa     => Str,
+    default => sub {
+        my $self = shift;
+        if ($self->api_key) {
+            my ($dc) = ( $self->api_key =~ /\-(\w+)$/ );
+            return $dc;
+        }
+        else {
+            return 'us1';
+        }
+    },
 );
 
 =head1 INTERNALS
@@ -600,7 +602,7 @@ has 'datacenter' => (
 
 sub commands {
     my ($self) = @_;
-    return $self->commands;
+    return $self->endpoints;
 }
 
 =head2 BUILD
