@@ -8,12 +8,12 @@ BEGIN {
   plan skip_all => '$ENV{MAILCHIMP_APIKEY} not set, skipping live tests' unless defined $ENV{MAILCHIMP_APIKEY}; 
 
   plan tests => 5;
-  use_ok('WebService::MailChimp');
+  use_ok('Mail::Chimp3');
 }
 
 my $apikey = $ENV{MAILCHIMP_APIKEY};
-my $mailchimp = WebService::MailChimp->new( api_key => $apikey );
-isa_ok($mailchimp, 'WebService::MailChimp');
+my $mailchimp = Mail::Chimp3->new( api_key => $apikey );
+isa_ok($mailchimp, 'Mail::Chimp3');
 is($mailchimp->base_url, 'https://' . $mailchimp->datacenter . '.api.mailchimp.com/3.0/', 'base_url as expected');
 
 my $lists = $mailchimp->lists;

@@ -1,10 +1,10 @@
-package WebService::MailChimp;
+package Mail::Chimp3;
 
 use Mouse;
 
 with 'Web::API';
 
-# ABSTRACT: WebService::MailChimp - an interface to mailchimp.com's RESTful Web API v3 using WEB::API
+# ABSTRACT: Mail::Chimp3 - an interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 our $VERSION = '0.01';
 
@@ -15,9 +15,9 @@ This is for the MailChimp API v3.0.
 Please refer to the API documentation at 
 L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
-    use WebService::MailChimp;
+    use Mail::Chimp3;
 
-    my $mailchimp = WebService::MailChimp->new(
+    my $mailchimp = Mail::Chimp3->new(
         api_key => $apikey,
     );
 
@@ -623,13 +623,13 @@ sub BUILD {
 
 =head1 BUGS
 
-Please report any bugs or feature requests on GitHub's issue tracker L<https://github.com/jdigory/p5-WebService-MailChimp/issues>.
+Please report any bugs or feature requests on GitHub's issue tracker L<https://github.com/jdigory/p5-Mail-Chimp3/issues>.
 
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc WebService::MailChimp
+    perldoc Mail::Chimp3
 
 You can also look for information at:
 
@@ -637,7 +637,7 @@ You can also look for information at:
 
 =item * GitHub repository
 
-L<https://github.com/jdigory/p5-WebService-MailChimp>
+L<https://github.com/jdigory/p5-Mail-Chimp3>
 
 =back
 
