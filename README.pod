@@ -4,7 +4,7 @@
 
 =head1 NAME
 
-Mail::Chimp3 - an interface to MailChimp's RESTful Web API v3 using Web::API
+Mail::Chimp3 - an interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 =head1 VERSION
 
@@ -202,6 +202,14 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head1 INTERNALS
 
+=over
+
+=item commands
+
+Required by Web::API
+
+=back
+
 =head2 BUILD
 
 basic configuration for the client API happens usually in the BUILD method when using Web::API
@@ -228,6 +236,13 @@ L<https://github.com/jdigory/p5-Mail-Chimp3>
 
 =head1 AUTHOR
 
-Josh Lavin
+Josh Lavin <digory@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Josh Lavin.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
