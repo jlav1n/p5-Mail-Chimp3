@@ -102,7 +102,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 delete_variant
 
-=head2 delete_list
+=head2 lists
 
 =head2 members
 
@@ -116,9 +116,9 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 pause_automation_email
 
-=head2 delete_store
+=head2 products
 
-=head2 delete_variant
+=head2 remove_automation_subscriber
 
 =head2 removed_automation_subscribers
 
@@ -126,7 +126,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =head2 segments
 
-=head2 removed_automation_subscribers
+=head2 start_automation
 
 =head2 start_automation_email
 
