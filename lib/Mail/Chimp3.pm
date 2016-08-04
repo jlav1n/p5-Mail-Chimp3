@@ -1094,7 +1094,7 @@ sub BUILD {
     my ($self) = @_;
 
     $self->user_agent( __PACKAGE__ . ' ' . ($Mail::Chimp3::VERSION || '') );
-    $self->base_url( 'https://' . $self->datacenter . '.api.mailchimp.com/' . $self->api_version . '/' );
+    $self->base_url( 'https://' . $self->datacenter . '.api.mailchimp.com/' . $self->api_version );
     $self->auth_type('basic');
     $self->user('anystring');
     $self->content_type('application/json');
