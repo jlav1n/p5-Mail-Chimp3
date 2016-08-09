@@ -1067,9 +1067,39 @@ has 'datacenter' => (
     },
 );
 
+has '+decoder' => (
+    builder => 1,
+);
+
 =head1 INTERNALS
 
 =over
+
+=cut
+
+sub _build_decoder {
+    my $self = shift;
+    return sub {
+        my ($content, $content_type) = @_;
+        my $data = {};
+        return $data unless $content;
+        for ($content_type) {
+            /plain/ and do {
+                chomp $content;
+                $data = { text => $content };
+            };
+            /urlencoded/ and do {
+                for (split /&/, $content) {
+                    my ($key, $value) = split /=/;
+                    $data->{ uri_unescape($key) } = uri_unescape($value);
+                }
+            };
+            /json/ and $data = $self->json->decode($content);
+            /(xml|html)/ and $data = $self->xml->XMLin( $content, NoAttr => 0 );
+        }
+        return $data;
+    };
+}
 
 =item commands
 
