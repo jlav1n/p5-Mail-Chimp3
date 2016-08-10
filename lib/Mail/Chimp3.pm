@@ -408,7 +408,7 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =cut
 
-has 'endpoints' => (
+has endpoints => (
     is      => 'rw',
     default => sub {
         {
@@ -1047,13 +1047,13 @@ has 'endpoints' => (
     },
 );
 
-has 'api_version' => (
+has api_version => (
     is      => 'ro',
     isa     => Num,
     default => sub { '3.0' },
 );
 
-has 'datacenter' => (
+has datacenter => (
     is      => 'lazy',
     isa     => Str,
     default => sub {
