@@ -827,6 +827,11 @@ has endpoints => (
                 method => 'DELETE',
                 path   => 'lists/:list_id',
             },
+            batch_list => {
+                method => 'POST',
+                path   => 'lists/:list_id',
+                mandatory => ['members'],
+            },
             abuse_reports        => { path => 'lists/:list_id/abuse-reports' },
             abuse_report         => { path => 'lists/:list_id/abuse-reports/:report_id' },
             list_activity        => { path => 'lists/:list_id/activity' },
