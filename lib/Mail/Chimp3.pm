@@ -3,7 +3,7 @@ package Mail::Chimp3;
 use 5.010001;
 use Moo;
 use strictures 2;
-use namespace::autoclean;
+use namespace::autoclean 0.16;
 use Types::Standard qw/ Num Str /;
 
 with 'Web::API';
