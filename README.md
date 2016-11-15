@@ -4,7 +4,7 @@ Mail::Chimp3 - An interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 # VERSION
 
-version 0.04
+version 0.03
 
 # SYNOPSIS
 
