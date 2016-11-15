@@ -7,14 +7,12 @@ use Digest::MD5 qw(md5_hex);
 BEGIN {
   plan skip_all => '$ENV{MAILCHIMP_APIKEY} not set, skipping live tests' unless defined $ENV{MAILCHIMP_APIKEY}; 
 
-  plan tests => 5;
+  plan tests => 3;
   use_ok('Mail::Chimp3');
 }
 
 my $apikey = $ENV{MAILCHIMP_APIKEY};
 my $mailchimp = Mail::Chimp3->new( api_key => $apikey );
-isa_ok($mailchimp, 'Mail::Chimp3');
-is($mailchimp->base_url, 'https://' . $mailchimp->datacenter . '.api.mailchimp.com/3.0/', 'base_url as expected');
 
 my $lists = $mailchimp->lists;
 my $list_id = $lists->{content}{lists}[0]->{id};
@@ -36,7 +34,12 @@ my $batch = [
 
 #my $listBatchSubscribe_expected = { add_count => 2, error_count => 0, errors => [], update_count => 0 };
 my $listBatchSubscribe = $mailchimp->add_batch( operations => $batch );
-is( $listBatchSubscribe->{code}, 200, 'listBatchSubscribe succeeded' );
+
+is(
+    $listBatchSubscribe->{code},
+    200,
+    'listBatchSubscribe succeeded'
+);
 
 #my $listBatchUnsubscribe_expected = { success_count => 2, error_count => 0, errors => [] };
 my $hash1 = md5_hex('foo@foobar.com');
@@ -51,6 +54,9 @@ my $listBatchUnsubscribe = $mailchimp->add_batch( operations => [
         path   => "lists/$list_id/members/$hash2",
     },
 ] );
-is( $listBatchUnsubscribe->{code}, 200, 'listBatchUnsubscribe succeeded' );
 
-done_testing;
+is(
+    $listBatchUnsubscribe->{code},
+    200,
+    'listBatchUnsubscribe succeeded'
+);
