@@ -4,7 +4,7 @@ Mail::Chimp3 - An interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 # VERSION
 
-version 0.03
+version 0.04
 
 # SYNOPSIS
 
@@ -238,6 +238,10 @@ You can also look for information at:
 - GitHub repository
 
     [https://github.com/jdigory/p5-Mail-Chimp3](https://github.com/jdigory/p5-Mail-Chimp3)
+
+# CONTRIBUTORS
+
+Peter Karman (pkarman)
 
 # AUTHOR
 
