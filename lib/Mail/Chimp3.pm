@@ -118,6 +118,8 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =item batches
 
+=item batch_list
+
 =item campaign
 
 =item campaign_content
