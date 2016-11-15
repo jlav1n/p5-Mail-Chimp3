@@ -1160,6 +1160,10 @@ L<https://github.com/jdigory/p5-Mail-Chimp3>
 
 =back
 
+=head1 CONTRIBUTORS
+
+Peter Karman (pkarman)
+
 =cut
 
 1;
