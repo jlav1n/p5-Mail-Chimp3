@@ -120,6 +120,8 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =item batch_list
 
+=item batch_segment
+
 =item campaign
 
 =item campaign_content
