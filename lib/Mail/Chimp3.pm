@@ -962,6 +962,10 @@ has endpoints => (
                 method => 'DELETE',
                 path   => 'lists/:list_id/segments/:segment_id/members/:subscriber_hash'
             },
+            batch_segment => {
+                method => 'POST',
+                path   => 'lists/:list_id/segments/:segment_id',
+            },
 
             # list other
             twitter_cards    => { path => 'lists/:list_id/twitter-lead-gen-cards' },
