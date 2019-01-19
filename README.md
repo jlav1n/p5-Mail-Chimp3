@@ -4,7 +4,7 @@ Mail::Chimp3 - An interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 # VERSION
 
-version 0.04
+version 0.05
 
 # SYNOPSIS
 
@@ -69,6 +69,7 @@ Please refer to the API documentation at
 - batch
 - batches
 - batch\_list
+- batch\_segment
 - campaign
 - campaign\_content
 - campaign\_feedback
