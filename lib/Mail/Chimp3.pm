@@ -1060,13 +1060,13 @@ has endpoints => (
     },
 );
 
-has api_version => (
+has chimp_api_version => (
     is      => 'ro',
     isa     => Num,
     default => sub { '3.0' },
 );
 
-has datacenter => (
+has chimp_datacenter => (
     is      => 'lazy',
     isa     => Str,
     default => sub {
@@ -1138,7 +1138,7 @@ sub BUILD {
     my ($self) = @_;
 
     $self->user_agent( __PACKAGE__ . ' ' . ($Mail::Chimp3::VERSION || '') );
-    $self->base_url( 'https://' . $self->datacenter . '.api.mailchimp.com/' . $self->api_version );
+    $self->base_url( 'https://' . $self->chimp_datacenter . '.api.mailchimp.com/' . $self->chimp_api_version );
     $self->auth_type('basic');
     $self->user('anystring');
     $self->content_type('application/json');
