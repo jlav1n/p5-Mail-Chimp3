@@ -4,13 +4,13 @@ Mail::Chimp3 - An interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 # VERSION
 
-version 0.06
+version 0.07
 
 # SYNOPSIS
 
 This is for the MailChimp API v3.0.
 
-Please refer to the API documentation at 
+Please refer to the API documentation at
 [http://developer.mailchimp.com/documentation/mailchimp/reference/overview/](http://developer.mailchimp.com/documentation/mailchimp/reference/overview/)
 
     use Mail::Chimp3;
@@ -31,20 +31,25 @@ Please refer to the API documentation at
 - add\_authorized\_app
 - add\_automation\_subscriber
 - add\_batch
+- add\_batch\_webhook
 - add\_campaign
 - add\_campaign\_feedback
 - add\_campaign\_folder
 - add\_cart
 - add\_cart\_line
+- add\_connected\_site
 - add\_conversation\_message
 - add\_customer
+- add\_domain\_name
 - add\_file\_manager\_file
 - add\_file\_manager\_folder
 - add\_interest
 - add\_interest\_category
+- add\_landing\_page
 - add\_list
 - add\_member
 - add\_member\_note
+- add\_member\_tag
 - add\_merge\_field
 - add\_order
 - add\_order\_line
@@ -70,6 +75,8 @@ Please refer to the API documentation at
 - batches
 - batch\_list
 - batch\_segment
+- batch\_webhooks
+- batch\_webhook
 - campaign
 - campaign\_content
 - campaign\_feedback
@@ -87,6 +94,8 @@ Please refer to the API documentation at
 - click\_details
 - click\_details\_member
 - click\_details\_members
+- connected\_sites
+- connected\_site
 - conversation
 - conversation\_message
 - conversation\_messages
@@ -94,16 +103,20 @@ Please refer to the API documentation at
 - customer
 - customers
 - delete\_batch
+- delete\_batch\_webhook
 - delete\_campaign
 - delete\_campaign\_feedback
 - delete\_campaign\_folder
 - delete\_cart
 - delete\_cart\_line
+- delete\_connected\_site
 - delete\_customer
+- delete\_domain\_name
 - delete\_file\_manager\_file
 - delete\_file\_manager\_folder
 - delete\_interest
 - delete\_interest\_category
+- delete\_landing\_page
 - delete\_list
 - delete\_member
 - delete\_member\_note
@@ -121,16 +134,23 @@ Please refer to the API documentation at
 - domain\_performance
 - eepurl
 - email\_activity
+- facebook\_ad
+- facebook\_ads
 - file\_manager\_file
 - file\_manager\_files
 - file\_manager\_folder
 - file\_manager\_folders
 - growth\_history
 - growth\_history\_month
+- google\_ads
+- google\_ads\_instance
 - interest
 - interest\_categories
 - interest\_category
 - interests
+- landing\_page
+- landing\_page\_content
+- landing\_pages
 - list
 - list\_activity
 - list\_clients
@@ -142,6 +162,7 @@ Please refer to the API documentation at
 - member\_goals
 - member\_note
 - member\_notes
+- member\_tags
 - member\_sent\_to
 - member\_unsubscribed
 - members
@@ -154,16 +175,29 @@ Please refer to the API documentation at
 - pause\_automation
 - pause\_automation\_email
 - pause\_campaign
+- ping
 - product
 - products
+- publish\_landing\_page
 - remove\_automation\_subscriber
 - removed\_automation\_subscribers
 - replicate\_campaign
 - report
 - reports
+- reporting
+- reporting\_facebook\_ad
+- reporting\_facebook\_ad\_ecommerce
+- reporting\_facebook\_ads
+- reporting\_google\_ad
+- reporting\_google\_ad\_ecommerce
+- reporting\_google\_ads
+- reporting\_landing\_page
+- reporting\_landing\_pages
 - resume\_campaign
 - root
 - schedule\_campaign
+- search\_campaigns
+- search\_members
 - segment
 - segment\_members
 - segments
@@ -183,8 +217,10 @@ Please refer to the API documentation at
 - test\_campaign
 - twitter\_card
 - twitter\_cards
+- unpublish\_landing\_page
 - unschedule\_campaign
 - unsubscribed
+- update\_batch\_webhook
 - update\_campaign
 - update\_campaign\_feedback
 - update\_campaign\_folder
@@ -195,6 +231,7 @@ Please refer to the API documentation at
 - update\_file\_manager\_folder
 - update\_interest
 - update\_interest\_category
+- update\_landing\_page
 - update\_list
 - update\_member
 - update\_member\_note
@@ -211,6 +248,10 @@ Please refer to the API documentation at
 - upsert\_variant
 - variant
 - variants
+- verified\_domains
+- verified\_domain\_name
+- verify\_connected\_site
+- verify\_domain\_name
 - webhook
 - webhooks
 
@@ -242,7 +283,8 @@ You can also look for information at:
 
 # CONTRIBUTORS
 
-Peter Karman (pkarman)
+- Peter Karman (pkarman)
+- Kian-Meng, Ang (kianmeng)
 
 # AUTHOR
 
