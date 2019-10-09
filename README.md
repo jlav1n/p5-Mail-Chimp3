@@ -4,7 +4,7 @@ Mail::Chimp3 - An interface to mailchimp.com's RESTful Web API v3 using WEB::API
 
 # VERSION
 
-version 0.07
+version 0.08
 
 # SYNOPSIS
 
@@ -238,6 +238,7 @@ Please refer to the API documentation at
 - update\_merge\_field
 - update\_order
 - update\_order\_line
+- update\_product
 - update\_segment
 - update\_store
 - update\_template
@@ -283,8 +284,7 @@ You can also look for information at:
 
 # CONTRIBUTORS
 
-- Peter Karman (pkarman)
-- Kian-Meng, Ang (kianmeng)
+Peter Karman (pkarman)
 
 # AUTHOR
 
