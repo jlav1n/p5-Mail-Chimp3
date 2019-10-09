@@ -458,6 +458,8 @@ L<http://developer.mailchimp.com/documentation/mailchimp/reference/overview/>
 
 =item update_order_line
 
+=item update_product
+
 =item update_segment
 
 =item update_store
@@ -856,6 +858,10 @@ has endpoints => (
                 method    => 'POST',
                 path      => 'ecommerce/stores/:store_id/products',
                 mandatory => [ 'id', 'title', 'variants', ],
+            },
+            update_product => {
+                method => 'PATCH',
+                path   => 'ecommerce/stores/:store_id/products/:product_id',
             },
             delete_product => {
                 method => 'DELETE',
