@@ -284,7 +284,7 @@ You can also look for information at:
 
 # CONTRIBUTORS
 
-Peter Karman (pkarman)
+See the [full list](https://github.com/jdigory/p5-Mail-Chimp3/graphs/contributors) &mdash; thank you to all who contribute!
 
 # AUTHOR
 
