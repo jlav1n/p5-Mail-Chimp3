@@ -11,7 +11,7 @@ version 0.08
 This is for the MailChimp API v3.0.
 
 Please refer to the API documentation at
-[http://developer.mailchimp.com/documentation/mailchimp/reference/overview/](http://developer.mailchimp.com/documentation/mailchimp/reference/overview/)
+[https://mailchimp.com/developer/reference/](https://mailchimp.com/developer/reference/)
 
     use Mail::Chimp3;
 
